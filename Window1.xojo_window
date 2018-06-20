@@ -9,7 +9,7 @@ Begin Window Window1
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   800
+   Height          =   249
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -200,7 +200,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   118
+      Top             =   194
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -232,7 +232,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   118
+      Top             =   194
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -274,7 +274,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   150
+      Top             =   130
       Transparent     =   False
       Underline       =   False
       UseFocusRing    =   True
@@ -310,7 +310,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   150
+      Top             =   130
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -352,7 +352,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   150
+      Top             =   130
       Transparent     =   False
       Underline       =   False
       UseFocusRing    =   True
@@ -388,7 +388,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   150
+      Top             =   130
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -423,7 +423,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   182
+      Top             =   162
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -455,7 +455,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   181
+      Top             =   161
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -487,7 +487,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   181
+      Top             =   161
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -529,12 +529,56 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   181
+      Top             =   161
       Transparent     =   False
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
       Width           =   58
+   End
+   Begin Separator Separator1
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   3
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   115
+      Transparent     =   False
+      Visible         =   True
+      Width           =   260
+   End
+   Begin Separator Separator2
+      AutoDeactivate  =   True
+      Enabled         =   True
+      Height          =   3
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Top             =   226
+      Transparent     =   False
+      Visible         =   True
+      Width           =   260
    End
 End
 #tag EndWindow
