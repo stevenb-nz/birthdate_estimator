@@ -187,7 +187,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   20
+      Left            =   200
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -219,7 +219,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   200
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -236,7 +236,7 @@ Begin Window Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
+      Width           =   55
    End
    Begin TextField EventTextField
       AcceptTabs      =   False
