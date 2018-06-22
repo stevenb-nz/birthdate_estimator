@@ -584,6 +584,18 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Method, Flags = &h0
+		Sub add_enabled()
+		  if true then
+		    AddEventPushButton.Enabled = true
+		  else
+		    AddEventPushButton.Enabled = false
+		  end
+		  
+		End Sub
+	#tag EndMethod
+
+
 #tag EndWindowCode
 
 #tag ViewBehavior
