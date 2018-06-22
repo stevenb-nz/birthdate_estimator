@@ -598,6 +598,54 @@ End
 
 #tag EndWindowCode
 
+#tag Events NameTextField
+	#tag Event
+		Sub TextChange()
+		  add_enabled
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events EventTextField
+	#tag Event
+		Sub TextChange()
+		  add_enabled
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events AgeTextField
+	#tag Event
+		Sub TextChange()
+		  add_enabled
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events MonthPopupMenu
+	#tag Event
+		Sub Change()
+		  add_enabled
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events DayPopupMenu
+	#tag Event
+		Sub Change()
+		  add_enabled
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events YearTextField
+	#tag Event
+		Sub TextChange()
+		  add_enabled
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
 		Name="BackColor"
