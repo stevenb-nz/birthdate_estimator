@@ -409,7 +409,7 @@ Begin Window Window1
       InitialParent   =   ""
       InitialValue    =   "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec\n"
       Italic          =   False
-      Left            =   130
+      Left            =   140
       ListIndex       =   0
       LockBottom      =   False
       LockedInPosition=   False
@@ -423,7 +423,7 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   161
+      Top             =   162
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -455,54 +455,11 @@ Begin Window Window1
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   161
+      Top             =   162
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   40
-   End
-   Begin TextField YearTextField
-      AcceptTabs      =   False
-      Alignment       =   0
-      AutoDeactivate  =   True
-      AutomaticallyCheckSpelling=   False
-      BackColor       =   &cFFFFFF00
-      Bold            =   False
-      Border          =   True
-      CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
-      Enabled         =   True
-      Format          =   ""
-      Height          =   22
-      HelpTag         =   ""
-      Index           =   -2147483648
-      Italic          =   False
-      Left            =   222
-      LimitText       =   0
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      Mask            =   ""
-      Password        =   False
-      ReadOnly        =   False
-      Scope           =   0
-      TabIndex        =   13
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Text            =   ""
-      TextColor       =   &c00000000
-      TextFont        =   "System"
-      TextSize        =   0.0
-      TextUnit        =   0
-      Top             =   161
-      Transparent     =   False
-      Underline       =   False
-      UseFocusRing    =   True
-      Visible         =   True
-      Width           =   58
+      Width           =   50
    End
    Begin Separator Separator1
       AutoDeactivate  =   True
@@ -580,10 +537,52 @@ Begin Window Window1
       Visible         =   True
       Width           =   80
    End
+   Begin Label YearLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   232
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "2018"
+      TextAlign       =   1
+      TextColor       =   &c00000000
+      TextFont        =   "Courier New"
+      TextSize        =   18.0
+      TextUnit        =   0
+      Top             =   162
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   48
+   End
 End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Sub Open()
+		  
+		End Sub
+	#tag EndEvent
+
+
 	#tag Method, Flags = &h0
 		Sub add_enabled()
 		  if true then
@@ -591,6 +590,17 @@ End
 		  else
 		    AddEventPushButton.Enabled = false
 		  end
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub change_year(n as integer)
+		  dim year as Integer
+		  
+		  year = val(YearLabel.text)
+		  year = year + n
+		  YearLabel.Text = str(year)
 		  
 		End Sub
 	#tag EndMethod
@@ -638,12 +648,21 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events YearTextField
+#tag Events YearLabel
 	#tag Event
-		Sub TextChange()
-		  add_enabled
+		Function MouseDown(X As Integer, Y As Integer) As Boolean
+		  Select Case X
+		  Case 0 to 11
+		    change_year(if(Y<10,-1000,1000))
+		  Case 12 to 23
+		    change_year(if(Y<10,-100,100))
+		  Case 24 to 35
+		    change_year(if(Y<10,-10,10))
+		  Case 36 to 47
+		    change_year(if(Y<10,-1,1))
+		  End Select
 		  
-		End Sub
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
