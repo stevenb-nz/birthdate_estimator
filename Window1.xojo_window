@@ -578,6 +578,11 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
+		  dim d as date
+		  
+		  d = new date
+		  
+		  YearLabel.Text = str(d.Year)
 		  
 		End Sub
 	#tag EndEvent
