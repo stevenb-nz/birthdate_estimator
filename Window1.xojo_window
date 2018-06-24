@@ -616,6 +616,21 @@ End
 
 	#tag Method, Flags = &h0
 		Sub day_options()
+		  dim i,j as integer
+		  dim d as Date
+		  
+		  d = new Date
+		  
+		  j = DayPopupMenu.ListIndex
+		  d.Year = val(YearLabel.text)
+		  d.Month = MonthPopupMenu.ListIndex + 2
+		  d.day = 1
+		  d.day = d.day - 1
+		  DayPopupMenu.DeleteAllRows
+		  for i = 1 to d.day
+		    DayPopupMenu.AddRow str(i)
+		  next
+		  DayPopupMenu.ListIndex = j
 		  
 		End Sub
 	#tag EndMethod
