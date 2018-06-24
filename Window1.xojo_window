@@ -583,6 +583,9 @@ End
 		  d = new date
 		  
 		  YearLabel.Text = str(d.Year)
+		  MonthPopupMenu.ListIndex = d.Month - 1
+		  day_options
+		  DayPopupMenu.ListIndex = d.Day - 1
 		  
 		End Sub
 	#tag EndEvent
@@ -606,6 +609,13 @@ End
 		  year = val(YearLabel.text)
 		  year = year + n
 		  YearLabel.Text = str(year)
+		  day_options
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub day_options()
 		  
 		End Sub
 	#tag EndMethod
@@ -640,6 +650,7 @@ End
 #tag Events MonthPopupMenu
 	#tag Event
 		Sub Change()
+		  day_options
 		  add_enabled
 		  
 		End Sub
