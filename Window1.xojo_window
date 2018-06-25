@@ -593,7 +593,21 @@ End
 
 	#tag Method, Flags = &h0
 		Sub add_enabled()
-		  if true then
+		  dim check as Boolean
+		  
+		  check = true
+		  
+		  if EventTextField.Text = "" then
+		    check = false
+		  end
+		  
+		  if AgeTextField.Text <> "0" then
+		    if 0 >= val(AgeTextField.Text) then
+		      check = false
+		    end
+		  end
+		  
+		  if check then
 		    AddEventPushButton.Enabled = true
 		  else
 		    AddEventPushButton.Enabled = false
