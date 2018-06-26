@@ -1,5 +1,5 @@
 #tag Window
-Begin Window Window1
+Begin Window BEMainwindow
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
    CloseButton     =   True
@@ -578,6 +578,7 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
+		  redim events(-1)
 		  dim d as date
 		  
 		  d = new date
@@ -649,6 +650,13 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub handle_events()
+		  MsgBox str(UBound(events))
+		  
+		End Sub
+	#tag EndMethod
+
 
 	#tag Property, Flags = &h0
 		events() As LifeEvent
@@ -716,6 +724,10 @@ End
 		  new_event.name = EventTextField.Text
 		  
 		  events.Append new_event
+		  AgeTextField.Text = ""
+		  EventTextField.Text = ""
+		  EventTextField.SetFocus
+		  handle_events
 		  
 		End Sub
 	#tag EndEvent
