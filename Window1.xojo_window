@@ -650,6 +650,11 @@ End
 	#tag EndMethod
 
 
+	#tag Property, Flags = &h0
+		events() As LifeEvent
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
 #tag Events NameTextField
@@ -689,6 +694,28 @@ End
 	#tag Event
 		Sub Change()
 		  add_enabled
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events AddEventPushButton
+	#tag Event
+		Sub Action()
+		  dim new_event As LifeEvent
+		  dim d as date
+		  
+		  new_event = new LifeEvent
+		  d = new Date
+		  
+		  d.year = val(YearLabel.text)
+		  d.Month = MonthPopupMenu.ListIndex + 1
+		  d.Day = DayPopupMenu.ListIndex + 1
+		  
+		  new_event.age = val(AgeTextField.Text)
+		  new_event.date = d
+		  new_event.name = EventTextField.Text
+		  
+		  events.Append new_event
 		  
 		End Sub
 	#tag EndEvent
