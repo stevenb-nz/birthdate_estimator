@@ -652,7 +652,7 @@ End
 
 	#tag Method, Flags = &h0
 		Sub handle_events()
-		  MsgBox str(UBound(events))
+		  BEMainwindow.Height = 249 + (UBound(events) + 1) * 32
 		  
 		End Sub
 	#tag EndMethod
