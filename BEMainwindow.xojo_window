@@ -693,7 +693,6 @@ End
 		  
 		  BEMainwindow.Height = 249 + n * 32
 		  
-		  
 		End Sub
 	#tag EndMethod
 
@@ -751,6 +750,7 @@ End
 		Sub Action()
 		  dim new_event As LifeEvent
 		  dim d as date
+		  dim l as Label
 		  
 		  new_event = new LifeEvent
 		  d = new Date
@@ -767,6 +767,15 @@ End
 		  AgeTextField.Text = ""
 		  EventTextField.Text = ""
 		  EventTextField.SetFocus
+		  
+		  if UBound(events) > 0 then
+		    l = new LabelTemplate
+		    l.Top = l.top + 32
+		  else
+		    l = LabelTemplate(0)
+		  end
+		  l.Text = "field " + str(UBound(events)+1)
+		  
 		  handle_events
 		  
 		End Sub
