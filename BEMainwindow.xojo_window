@@ -712,6 +712,24 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events ResetPushButton
+	#tag Event
+		Sub Action()
+		  dim i as integer
+		  
+		  for i = UBound(events) DownTo 1
+		    LabelTemplate(i).close
+		  next
+		  
+		  LabelTemplate(0).Text =""
+		  
+		  redim events(-1)
+		  
+		  BEMainwindow.Height = 249
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events EventTextField
 	#tag Event
 		Sub TextChange()
@@ -770,10 +788,11 @@ End
 		  
 		  if UBound(events) > 0 then
 		    l = new LabelTemplate
-		    l.Top = l.top + 32
+		    l.Top = l.top + 32 * ubound(events)
 		  else
 		    l = LabelTemplate(0)
 		  end
+		  
 		  l.Text = new_event.name + " at " + str(new_event.age) + " on " + new_event.date.ShortDate
 		  
 		  handle_events
