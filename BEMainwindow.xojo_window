@@ -774,7 +774,7 @@ End
 		  else
 		    l = LabelTemplate(0)
 		  end
-		  l.Text = "field " + str(UBound(events)+1)
+		  l.Text = new_event.name + " at " + str(new_event.age) + " on " + new_event.date.ShortDate
 		  
 		  handle_events
 		  
