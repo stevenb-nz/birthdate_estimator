@@ -704,18 +704,14 @@ End
 
 #tag EndWindowCode
 
-#tag Events NameTextField
-	#tag Event
-		Sub TextChange()
-		  add_enabled
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
 #tag Events ResetPushButton
 	#tag Event
 		Sub Action()
 		  dim i as integer
+		  
+		  NameTextField.text = ""
+		  FromLabel.Text = "From: "
+		  ToLabel.Text = "To: "
 		  
 		  for i = UBound(events) DownTo 1
 		    LabelTemplate(i).close
