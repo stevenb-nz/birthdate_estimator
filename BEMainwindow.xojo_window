@@ -695,30 +695,19 @@ End
 		  new_from = new date
 		  new_to = new date
 		  
-		  new_from.SQLDate = events(0).date.SQLDate
-		  new_from.Year = new_from.year - (events(0).age + 1)
-		  new_from.Day = new_from.day + 1
-		  from_date.SQLDate = new_from.SQLDate
-		  FromLabel.Text = "From :"+from_date.LongDate
-		  
-		  new_to.SQLDate = events(0).date.SQLDate
-		  new_to.Year = new_to.year - events(0).age
-		  to_date.SQLDate = new_to.SQLDate
-		  ToLabel.Text = "To: "+to_date.LongDate
-		  
 		  n = UBound(events)
-		  for i = 1 to n
+		  for i = 0 to n
 		    new_from.SQLDate = events(i).date.SQLDate
 		    new_from.Year = new_from.year - (events(i).age + 1)
 		    new_from.Day = new_from.day + 1
-		    if from_date.TotalSeconds < new_from.TotalSeconds then
+		    if i=0 or from_date.TotalSeconds < new_from.TotalSeconds then
 		      from_date.SQLDate = new_from.SQLDate
-		      FromLabel.Text = "From :"+from_date.LongDate
+		      FromLabel.Text = "From: "+from_date.LongDate
 		    end
 		    
 		    new_to.SQLDate = events(i).date.SQLDate
 		    new_to.Year = new_to.year - events(i).age
-		    if to_date.TotalSeconds > new_to.TotalSeconds then
+		    if i=0 or to_date.TotalSeconds > new_to.TotalSeconds then
 		      to_date.SQLDate = new_to.SQLDate
 		      ToLabel.Text = "To: "+to_date.LongDate
 		    end
